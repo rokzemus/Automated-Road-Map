@@ -37,14 +37,9 @@ def displayTable():
     print("")
     print("")
 
-employee_List, table_List = assignDealer(table_List, employee_List)
+def updateTable():
+    global employee_List
+    global table_List
+    employee_List, table_List = assignDealer(table_List, employee_List)
 
-displayTable()
-
-employee_List, table_List = assignDealer(table_List, employee_List)
-
-displayTable()
-
-employee_List, table_List = assignDealer(table_List, employee_List)
-
-displayTable()
+    displayTable()
