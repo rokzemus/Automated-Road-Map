@@ -17,8 +17,9 @@ with open('gameList.csv', 'r') as GameList:
 
 
 def assignDealer(parTableList, parEmployeeList):
-    for x in range(len(parEmployeeList)):
-        for i in range(len(parTableList)):
+    b = 0
+    for i in range(len(parTableList)):
+        for x in range(len(parEmployeeList)):
             if parTableList[i].isFull() == False:
                 if parTableList[i].gameCode in parEmployeeList[x].gamesKnown:
                     parTableList[i].dealerName.append(parEmployeeList[x].name)
@@ -28,18 +29,21 @@ def assignDealer(parTableList, parEmployeeList):
                     pass
                 else:
                     break
-
-            elif int(parEmployeeList[x].startTime) >= int(parTableList[i].dealerOut[i]):
-                for n in range(len(table_List[i].dealerName)):
-                    if parTableList[i].gameCode in parEmployeeList[x].gamesKnown:
-                        parTableList[i].dealerName[n] = parEmployeeList[x].name
-                        parTableList[i].dealerOut[n] = parEmployeeList[x].endTime
-                        parEmployeeList[x] = Person.Person()
-                        #parTableList[i].slotsUsed += 1
-                        print(parTableList[i].isFull(), parTableList[i])
-                        break
-                    else:
-                        pass
+            elif int(parEmployeeList[x].startTime) >= int(parTableList[i].dealerOut[b]):
+                for n in range(len(table_List[i].dealerName[b])):
+                     if  parTableList[i].gameCode in parEmployeeList[x].gamesKnown:
+                         parTableList[i].dealerName[b] = parEmployeeList[x].name
+                         parTableList[i].dealerOut[b] = parEmployeeList[x].endTime
+                         parEmployeeList[x] = Person.Person()
+                         parTableList[i].slotsUsed += 1
+                         b + 1
+                         print(parTableList[i].isFull(), parTableList[i])
+                         if b >= 4:
+                             pass
+                     else:
+                         pass
+            else:
+                break
     return parTableList, parEmployeeList
 
 
@@ -50,8 +54,6 @@ def displayTable():
         print(table_List[i].slotsNeeded, table_List[i].slotsUsed)
     print("")
     print("")
-
-
 
 
 def updateTable():
