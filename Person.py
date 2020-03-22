@@ -5,7 +5,7 @@
 
 
 class Person:
-    def __init__(self, name="", startTime=0000, endTime=0000, gamesKnown=[], alreadyDealing=False):
+    def __init__(self, name='', startTime=0000, endTime=0000, gamesKnown=[], alreadyDealing=False):
         self.name = name
         self.startTime = startTime
         self.endTime = endTime

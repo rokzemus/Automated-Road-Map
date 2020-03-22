@@ -1,6 +1,6 @@
 class Table():
-    def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 1, slotsUsed = 0, dealerName = '',
-                 dealerOut = -1, isOpen = False):
+    def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 1, slotsUsed = 0, dealerName = [],
+                 dealerOut = [], isOpen = False):
         self.gameCode = gameCode
         self.gameNum = gameNum
         self.slotsNeeded = slotsNeeded
