@@ -13,38 +13,50 @@ with open('schedule.csv', 'r') as Schedule:
 with open('gameList.csv', 'r') as GameList:
     reader = csv.reader(GameList)
     for row in reader:
-        table_List.append(Table.Table(row[0], row[1]))
+        table_List.append(Table.Table(row[0], row[1], row[2]))
 
 
 def assignDealer(parTableList, parEmployeeList):
     for i in range(len(parTableList)):
         for x in range(len(parEmployeeList)):
-            if int(parEmployeeList[x].startTime) >= int(parTableList[i].dealerOut):
+            if parTableList[i].isFull() == False:
                 if parTableList[i].gameCode in parEmployeeList[x].gamesKnown:
                     parTableList[i].dealerName = parEmployeeList[x].name
                     parTableList[i].dealerOut = parEmployeeList[x].endTime
+                    parTableList[i].slotsUsed += 1
                     parEmployeeList[x] = Person.Person()
                     break
                 else:
                     pass
+            else:
+                if int(parEmployeeList[x].startTime) >= int(parTableList[i].dealerOut):
+                    if parTableList[i].gameCode in parEmployeeList[x].gamesKnown:
+                        parTableList[i].dealerName = parEmployeeList[x].name
+                        parTableList[i].dealerOut = parEmployeeList[x].endTime
+                        parEmployeeList[x] = Person.Person()
+                        #parTableList[i].slotsUsed += 1
+                        break
+                    else:
+                        pass
     return parEmployeeList, parTableList
 
 
 def displayTable():
     for i in range(len(table_List)):
         print(table_List[i])
+    for i in range(len(table_List)):
+        print(table_List[i].slotsNeeded, table_List[i].slotsUsed)
     print("")
     print("")
 
 
-employee_List, table_List = assignDealer(table_List, employee_List)
 
-displayTable()
 
-employee_List, table_List = assignDealer(table_List, employee_List)
+def updateTable():
+    global employee_List
+    global table_List
 
-displayTable()
+    employee_List, table_List = assignDealer(table_List, employee_List)
 
-employee_List, table_List = assignDealer(table_List, employee_List)
+    displayTable()
 
-displayTable()
