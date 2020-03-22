@@ -7,7 +7,7 @@ Forth Bj, 0100,0500, BJ RO JK
 Third Craps,0500, 1000, CR JK RO
 Fifth BJ,0500,1000, BJ JK RO
 Sixth Bj, 0500,1000, BJ JK RO
-Fourth Craps,0500,1000,JK BJ CR
+Fourth Craps,0500,1000,JK RO CR
 Seventh Bj,0500,1000,RO JK BJ
 Eighth Bj,0500,1000,JK BJ RO
 Nineth Bj,1000,1500,BJ JK RO
