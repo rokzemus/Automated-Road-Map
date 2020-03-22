@@ -1,10 +1,10 @@
 class Table():
-    def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 1, slotsUsed = 0, dealerName = [],
+    def __init__(self, gameCode = '', gameNum = 0, slotsUsed = 0, slotsNeeded = 1, dealerName = [],
                  dealerOut = [], isOpen = False):
         self.gameCode = gameCode
         self.gameNum = gameNum
-        self.slotsNeeded = slotsNeeded
         self.slotsUsed = slotsUsed
+        self.slotsNeeded = slotsNeeded
         self.dealerName = dealerName
         self.dealerOut = dealerOut
         self.isOpen = isOpen
@@ -13,7 +13,7 @@ class Table():
         return f"{self.gameCode} {self.gameNum} {self.dealerName}"
 
     def isFull(self):
-        if int(self.slotsNeeded) == int(self.slotsUsed):
+        if int(self.slotsUsed) == int(self.slotsNeeded):
             return True
         else:
             return False
