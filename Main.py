@@ -18,50 +18,52 @@ with open('gameList.csv', 'r') as GameList:
 
 
 def assignDealer(parTableList, parEmployeeList):
-    global extra_Emps
+    extra_Emps = []
     d = 0
     k = 0
+    x = 0
     filledTable = []
     for k in range(len(parTableList)):
         for x in range(len(parEmployeeList)):
-            if not parTableList[k].isFull():
-                if parTableList[k].gameCode in parEmployeeList[x].gamesKnown:
-                    print(parTableList[k].gameCode, parEmployeeList[x].gamesKnown)
+            if parTableList[k].isFull():
+                break
+            elif parTableList[k].gameCode in parEmployeeList[x].gamesKnown:
+                if parEmployeeList[x].alreadyDealing == True:
+                    x += 1
+                    pass
+                    # print(parTableList[k].gameCode, parEmployeeList[x].gamesKnown)
+                    # print(d)
+                    # print(parTableList[k].dealerName)
+                    # print(parEmployeeList[x].name)
+                elif parEmployeeList[x].name not in parTableList[k].dealerName:
                     d = parTableList[k].slotsUsed
-                    print(d)
-                    print(parTableList[k].dealerName)
-                    print(parEmployeeList[x].name)
-                    if not parEmployeeList[x].name in parTableList[k].dealerName:
-                        filledTable.append(str(parEmployeeList[x].name))
-                        d += 1
-                        print(parTableList[k].dealerName)
-                        parTableList[k].slotsUsed = d
-                        parTableList[k].dealerOut.append(parEmployeeList[x].endTime)
-                        print(d)
-                        parEmployeeList[x] = Person.Person()
-                    if d >= int(parTableList[k].slotsNeeded):
+                    filledTable.append(str(parEmployeeList[x].name))
+                    d += 1
+                    #print(parTableList[k].dealerName)
+                    parTableList[k].slotsUsed = d
+                    parTableList[k].dealerOut.append(parEmployeeList[x].endTime)
+                    #print(d)
+                    parEmployeeList[x].alreadyDealing = True
+                if d >= int(parTableList[k].slotsNeeded):
                         d = 0
                         parTableList[k].dealerName = filledTable
                         filledTable = []
                         pass
+
+
+
                 else:
                     pass
-            else:
 
-
-                k += 1
-                x = 0
-                pass
-
-                # if parTableList[k].dealerName in parTableList[k - 1].dealerName:
-                #     if k != int(parTableList[-1].gameNum):
-                #         parTableList[k - 1].dealerName.remove(parTableList[k].dealerName)
-                # if parTableList[k].dealerOut == parTableList[k + 1].dealerOut:
-                #     if k != int(parTableList[-1].gameNum):
-                #         parTableList[k - 1].dealerOut.remove(parTableList[k].dealerOut)
-                # if k == int(parTableList[-1].gameNum):
-                #     break
-                # else:
+            # if parTableList[k].dealerName in parTableList[k - 1].dealerName:
+            #     if k != int(parTableList[-1].gameNum):
+            #         parTableList[k - 1].dealerName.remove(parTableList[k].dealerName)
+            # if parTableList[k].dealerOut == parTableList[k + 1].dealerOut:
+            #     if k != int(parTableList[-1].gameNum):
+            #         parTableList[k - 1].dealerOut.remove(parTableList[k].dealerOut)
+            # if k == int(parTableList[-1].gameNum):
+            #     break
+            # else:
 
             # if int(parEmployeeList[x].startTime) == int(parTableList[i].dealerOut[i]):
             #     for n in range(len(table_List[i].dealerName[d])):
@@ -77,7 +79,7 @@ def assignDealer(parTableList, parEmployeeList):
             #         else:
             #             pass
 
-        return parTableList, parEmployeeList
+    return parTableList, parEmployeeList
 
 
 # def assignDealer(parTableList, parEmployeeList):

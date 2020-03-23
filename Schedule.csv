@@ -1,13 +1,12 @@
-Craps One,0100,0500,CR,False
+Craps One,0100,0500,CR BJ,False
 Craps Two,0100,0500,CR,False
-Craps Three,0100,0500,CR,False
+Craps Three,0100,0500,CR BJ,False
 Craps Four,0100,0500,CR,False
 Craps Five,0100,0500,BJ,False
-Craps Six,0100,0500,CR,False
+Craps Six,0100,0500,CR BJ,False
 Craps Seven,0100,0500,CR,False
 Craps Eight,0100,0500,CR,False
-Craps Nine,0100,0500,CR,False
-Craps Ten,0100,0500,CR,False
-Craps Eleven,0100,0500,CR,False
-Craps Twelve,0100,0500,CR,False
-Craps Thirteen,2300,0500,BJ,False
+Craps Ten,0100,0500,CR BJ,False
+Craps Eleven,0100,0500,BJ CR,False
+Craps Twelve,0100,0500,CR BJ,False
+Craps Thirteen,0100,0500,BJ,False
