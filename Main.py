@@ -14,7 +14,7 @@ with open('gameList.csv', 'r') as GameList:
     reader = csv.reader(GameList)
     #for row in reader:
     for row in reader:
-        table_List.append(Table.Table(row[0], int(row[1], row[2], row[3])))
+        table_List.append((row[0], int(row[1], row[2], row[3])))
 
 
 def assignDealer(parTableList, parEmployeeList):
