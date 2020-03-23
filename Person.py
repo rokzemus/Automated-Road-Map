@@ -14,7 +14,7 @@ class Person:
         # self.slots = slots
         self.alreadyDealing = alreadyDealing
     def __str__(self):
-        return f"{self.name} {self.startTime} {self.endTime}"
+        return f"{self.name} {self.startTime} {self.endTime} {self.alreadyDealing}"
 
     #def assign(self, slot):
         #assert slot in self.slots

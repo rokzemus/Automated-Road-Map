@@ -1,3 +1,4 @@
+GameCode, GameNum, Dealers, SlotsUsed, SlotsNeeded
 CR,101,0,4
 CR,102,0,4
-BJ,104,0,1
+BJ,103,0,1
