@@ -2,12 +2,12 @@ Craps One,0100,0500,CR
 Craps Two,0100,0500,CR
 Craps Three,0100,0500,CR
 Craps Four,0100,0500,CR
-Craps Five,0500,1000,CR
-Craps Six,0500,1000,CR
-Craps Seven,0500,1000,CR
-Craps Eight,0500,1000,CR
-Craps Nine,1000,1500,CR
-Craps Ten,1000,1500,CR
-Craps Eleven,1000,1500,CR
-Craps Twelve,1000,1500,CR
-Craps Thirteen,1500,2000,CR BJ
+Craps Five,0100,0500,BJ
+Craps Six,0100,0500,CR
+Craps Seven,0100,0500,CR
+Craps Eight,0100,0500,CR
+Craps Nine,0100,0500,CR
+Craps Ten,0100,0500,CR
+Craps Eleven,0100,0500,CR
+Craps Twelve,0100,0500,CR
+Craps Thirteen,2300,0500,BJ
