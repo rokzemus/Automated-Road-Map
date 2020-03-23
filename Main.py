@@ -86,14 +86,6 @@ def displayTable():
 def updateTable():
     global employee_List
     global table_List
-
-    table_List, employee_List = assignDealer(table_List, employee_List)
+    employee_List, table_List = assignDealer(table_List, employee_List)
 
     displayTable()
-
-updateTable()
-updateTable()
-updateTable()
-updateTable()
-updateTable()
-
