@@ -13,10 +13,16 @@ class Table():
         return f"{self.gameCode} {self.gameNum} {self.dealerName}"
 
     def isFull(self):
-        if int(self.slotsNeeded) == int(self.slotsUsed):
+        if self.slotsNeeded == self.slotsUsed:
             return True
         else:
             return False
+
+    def gameType(self):
+        if 'CR' in self.gameCode:
+            self.SlotsNeeded = 4
+        if 'BJ' in self.gameCode:
+            self.slotsUsed = 1
 
 
     def fillSlot(self):

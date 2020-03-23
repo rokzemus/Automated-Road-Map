@@ -5,7 +5,7 @@
 
 
 class Person:
-    def __init__(self, name='', startTime=0000, endTime=0000, gamesKnown=[], alreadyDealing=False):
+    def __init__(self, name='', startTime=0000, endTime=0000, gamesKnown=[], alreadyDealing=True):
         self.name = name
         self.startTime = startTime
         self.endTime = endTime
@@ -13,6 +13,7 @@ class Person:
         self.gamesKnown = gamesKnown
         # self.slots = slots
         self.alreadyDealing = alreadyDealing
+
     def __str__(self):
         return f"{self.name} {self.startTime} {self.endTime} {self.alreadyDealing}"
 
