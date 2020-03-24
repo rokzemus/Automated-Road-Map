@@ -19,8 +19,6 @@ class Table():
             return False
 
 
-    def fillSlot(self):
-        for i in self.dealerName:
-            if len(self.dealerName[i]) >= self.slotsNeeded:
-                pass
-        return 'Full'
+    def fillSlot(self, isOpen):
+        self.isOpen = True
+

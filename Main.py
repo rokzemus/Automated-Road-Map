@@ -17,14 +17,23 @@ with open('gameList.csv', 'r') as GameList:
 
 
 def assignDealer(parTableList, parEmployeeList):
-     b = 0
+     b = 1
      for i in range(len(parTableList)):
          for x in range(len(parEmployeeList)):
              if parTableList[i].isFull() == False:
                  if parTableList[i].gameCode in parEmployeeList[x].gamesKnown:
                      parTableList[i].dealerName.append(parEmployeeList[x].name)
                      parTableList[i].dealerOut.append(parEmployeeList[x].endTime)
+                     print(parTableList[i].dealerName)
                      parTableList[i].slotsUsed += 1
+                     print(parTableList[i].slotsUsed)
+                     if parTableList[i].slotsUsed < parTableList[i].slotsNeeded:
+                         print('need')
+                         parEmployeeList[x] = Person.Person()
+                         pass
+                     else:
+                         print('full')
+                         break
                      parEmployeeList[x] = Person.Person()
                      if b >= int(parTableList[i].slotsNeeded):
                          b = 0
@@ -42,13 +51,13 @@ def assignDealer(parTableList, parEmployeeList):
                           b += 1
                           print(parTableList[i].isFull(), parTableList[i])
                           if b >= int(parTableList[i].slotsNeeded):
-                              b = 0
+                              b = 1
                               pass
                       else:
                             break
                 #else:
                  #   break
-     return parTableList, parEmployeeList
+     return parEmployeeList, parTableList
 
 # def assignDealer(parTableList, parEmployeeList):
 #     b = 0
@@ -89,3 +98,6 @@ def updateTable():
     employee_List, table_List = assignDealer(table_List, employee_List)
 
     displayTable()
+
+updateTable()
+updateTable()
