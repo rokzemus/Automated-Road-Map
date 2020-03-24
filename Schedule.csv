@@ -10,3 +10,15 @@ Craps Ten,0100,0500,CR BJ,False
 Craps Eleven,0100,0500,BJ CR,False
 Craps Twelve,0100,0500,CR BJ,False
 Craps Thirteen,0100,0500,BJ,False
+Crapstwo One,0500,1000,CR BJ,False
+Crapstwo Two,0500,1000,CR,False
+Crapstwo Three,0500,1000,CR BJ,False
+Crapstwo Four,0500,1000,CR,False
+Crapstwo Five,0500,1000,BJ,False
+Crapstwo Six,0500,1000,CR BJ,False
+Crapstwo Seven,0500,1000,CR,False
+Crapstwo Eight,0500,1000,CR,False
+Crapstwo Ten,0500,1000,CR BJ,False
+Crapstwo Eleven,0500,1000,BJ CR,False
+Crapstwo Twelve,0500,1000,CR BJ,False
+Crapstwo Thirteen,0500,1000,BJ,False

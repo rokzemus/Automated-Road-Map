@@ -1,5 +1,5 @@
 class Table():
-    def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 4, slotsUsed = 0, dealerName = [],
+    def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 1, slotsUsed = 0, dealerName = [],
                  dealerOut = [], isOpen = False):
         self.gameCode = gameCode
         self.gameNum = gameNum
@@ -15,14 +15,14 @@ class Table():
     def isFull(self):
         if self.slotsNeeded == self.slotsUsed:
             return True
-        else:
-            return False
+#        else:
+#            return False
 
     def gameType(self):
         if 'CR' in self.gameCode:
-            self.SlotsNeeded = 4
-        if 'BJ' in self.gameCode:
-            self.slotsUsed = 1
+            self.slotsNeeded = 4
+        elif 'BJ' in self.gameCode:
+            self.slotsNeeded = 1
 
 
     def fillSlot(self):
