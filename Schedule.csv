@@ -1,24 +1,24 @@
-Craps One,0100,0500,CR BJ,False
-Craps Two,0100,0500,CR,False
-Craps Three,0100,0500,CR BJ,False
-Craps Four,0100,0500,CR,False
-Craps Five,0100,0500,BJ,False
-Craps Six,0100,0500,CR BJ,False
-Craps Seven,0100,0500,CR,False
-Craps Eight,0100,0500,CR,False
-Craps Ten,0100,0500,CR BJ,False
-Craps Eleven,0100,0500,BJ CR,False
-Craps Twelve,0100,0500,CR BJ,False
-Craps Thirteen,0100,0500,BJ,False
-Crapstwo One,0500,1000,CR BJ,False
-Crapstwo Two,0500,1000,CR,False
-Crapstwo Three,0500,1000,CR BJ,False
-Crapstwo Four,0500,1000,CR,False
-Crapstwo Five,0500,1000,BJ,False
-Crapstwo Six,0500,1000,CR BJ,False
-Crapstwo Seven,0500,1000,CR,False
-Crapstwo Eight,0500,1000,CR,False
-Crapstwo Ten,0500,1000,CR BJ,False
-Crapstwo Eleven,0500,1000,BJ CR,False
-Crapstwo Twelve,0500,1000,CR BJ,False
-Crapstwo Thirteen,0500,1000,BJ,False
+Craps One,0100,0500,CR BJ
+Craps Two,0100,0500,CR
+Craps Three,0100,0500,CR BJ
+Craps Four,0100,0500,CR
+Craps Five,0100,0500,BJ
+Craps Six,0100,0500,CR BJ
+Craps Seven,0100,0500,CR
+Craps Eight,0100,0500,CR
+Craps Ten,0100,0500,CR BJ
+Craps Eleven,0100,0500,BJ CR
+Craps Twelve,0100,0500,CR BJ
+Craps Thirteen,0100,0500,BJ
+Crapstwo One,0500,1000,CR BJ
+Crapstwo Two,0500,1000,CR
+Crapstwo Three,0500,1000,CR BJ
+Crapstwo Four,0500,1000,CR
+Crapstwo Five,0500,1000,BJ
+Crapstwo Six,0500,1000,CR BJ
+Crapstwo Seven,0500,1000,CR
+Crapstwo Eight,0500,1000,CR
+Crapstwo Ten,0500,1000,CR BJ
+Crapstwo Eleven,0500,1000,BJ CR
+Crapstwo Twelve,0500,1000,CR BJ
+Crapstwo Thirteen,0500,1000,BJ

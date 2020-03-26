@@ -1,32 +1,42 @@
+import Person
+import Main
+
+
 class Table():
-    def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 1, slotsUsed = 0, dealerName = [],
-                 dealerOut = [], isOpen = False):
+    def __init__(self, gameCode='', gameNum=0, slotsNeeded=0, slotsUsed=0, currentDealer=[],
+                 dealerOut=[], nextDealer=[], isOpen=False):
+
         self.gameCode = gameCode
         self.gameNum = gameNum
         self.slotsNeeded = slotsNeeded
         self.slotsUsed = slotsUsed
-        self.dealerName = dealerName
+        self.currentDealer = currentDealer
         self.dealerOut = dealerOut
+        self.nextDealer = nextDealer
         self.isOpen = isOpen
 
     def __str__(self):
-        return f"{self.gameCode} {self.gameNum} {self.dealerName}"
+        return f"{self.gameCode} {self.gameNum} {self.currentDealer}"
 
     def isFull(self):
-        if self.slotsNeeded == self.slotsUsed:
-            return True
-#        else:
-#            return False
+        return self.slotsNeeded == self.slotsUsed
 
     def gameType(self):
-        if 'CR' in self.gameCode:
-            self.slotsNeeded = 4
-        elif 'BJ' in self.gameCode:
-            self.slotsNeeded = 1
-
+        gameTypes = {'CR': 4, 'BJ': 1}
+        self.slotsNeeded = gameTypes[self.gameCode]
 
     def fillSlot(self):
-        for i in self.dealerName:
-            if len(self.dealerName[i]) >= self.slotsNeeded:
+        for i in self.currentDealer:
+            self.slotsUsed = i
+            pass
+
+    def replaceDealer(self):
+        for x in self.currentDealer:
+            for i in Main.employee_List:
+                if not i.alreadyDealing:
+                    if i.startTime == x.dealerOut:
+                        x = i
+                        i.alreadyDealing = True
+                        x.alreadyDealing = False
+                        pass
                 pass
-        return 'Full'
