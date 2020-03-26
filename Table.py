@@ -1,3 +1,6 @@
+import Person
+import Main
+
 class Table():
     def __init__(self, gameCode = '', gameNum = 0, slotsNeeded = 1, slotsUsed = 0, dealerName = [],
                  dealerOut = [], isOpen = False):
@@ -19,12 +22,10 @@ class Table():
 #            return False
 
     def gameType(self):
-        if 'CR' in self.gameCode:
-            self.slotsNeeded = 4
-        elif 'BJ' in self.gameCode:
-            self.slotsNeeded = 1
+        gameTypes = {"CR": 4, "BJ": 1}
+        self.slotsNeeded = gameTypes[self.gameCode]
 
 
-    def fillSlot(self, isOpen):
+    def fillSlot(self):
         self.isOpen = True
 
