@@ -23,8 +23,9 @@ class Table():
     def displayDealers(self):
         openTables = []
         for i in range(len(self.currentDealer)):
+            print(self.gameCode, self.gameNum, self.currentDealer[i].name, self.currentDealer[i].endTime)
             openTables = self.gameCode, self.gameNum, self.currentDealer[i].name, self.currentDealer[i].endTime
-            print(openTables)
+
     def isFull(self):
         return self.slotsNeeded == self.slotsUsed
 
