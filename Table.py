@@ -1,5 +1,4 @@
 import Person
-import Main
 
 
 class Table():
@@ -17,14 +16,9 @@ class Table():
     def __str__(self):
         return f"{self.gameCode} {self.gameNum} {self.currentDealer}"
 
-    def __repr__(self):
-        pass
-
     def displayDealers(self):
-        openTables = []
         for i in range(len(self.currentDealer)):
             print(self.gameCode, self.gameNum, self.currentDealer[i].name, self.currentDealer[i].endTime)
-            openTables = self.gameCode, self.gameNum, self.currentDealer[i].name, self.currentDealer[i].endTime
 
     def isFull(self):
         return self.slotsNeeded == self.slotsUsed
@@ -36,12 +30,13 @@ class Table():
             self.currentDealer = [Person.Person()] * self.slotsNeeded
 
     def replaceDealer(self):
+        from Main import employee_List
         for x in range(len(self.currentDealer)):
-            for i in range(len(Main.employee_List)):
-                if not Main.employee_List[i].alreadyDealing:
-                    if Main.employee_List[i].startTime >= self.currentDealer[x].endTime:
-                        self.currentDealer[x] = Main.employee_List[i]
-                        Main.employee_List[i].alreadyDealing = True
+            for i in range(len(employee_List)):
+                if not employee_List[i].alreadyDealing:
+                    if employee_List[i].startTime >= self.currentDealer[x].endTime:
+                        self.currentDealer[x] = employee_List[i]
+                        employee_List[i].alreadyDealing = True
                         self.slotsUsed += 1
 
                         x += 1
@@ -54,7 +49,11 @@ class Table():
                         pass
                 else:
                     pass
-        self.displayDealers()
+
+        self.__repr__()
+
 
     def nextRota(self, x):
         self.stringLoc += x
+
+

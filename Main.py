@@ -17,11 +17,7 @@ with open('gameList.csv', 'r') as GameList:
 
 
 def assignDealer(parTableList, parEmployeeList):
-    emps_Leaving = []
-    d = 0
     k = 0
-    x = 0
-    v = 0
 
     for k in range(len(parTableList)):
         parTableList[k].gameType()

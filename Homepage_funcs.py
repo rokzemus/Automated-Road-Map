@@ -13,7 +13,7 @@ class HomePage(QMainWindow):
         loadUi('untitled.ui', self)
         self.pushButton.clicked.connect(Main.updateTable)
         for i in range(len(Main.table_List)):
-            self.listWidget_2.addItem(str(openTables()))
+            self.listWidget_2.addItem(str(Main.table_List[i].currentDealer))
         self.pushButton_2.clicked.connect(self.refreshEmp)
 
     def refreshEmp(self):
