@@ -5,12 +5,12 @@
 
 
 class Person:
-    def __init__(self, name='', startTime=0000, endTime=0000, gamesKnown=None, alreadyDealing=False):
+    def __init__(self, name='Default', startTime=0000, endTime=0000, gamesKnown=None, alreadyDealing=False):
         if gamesKnown is None:
             gamesKnown = []
         self.name = name
-        self.startTime = startTime
-        self.endTime = endTime
+        self.startTime = int(startTime)
+        self.endTime = int(endTime)
         self.gamesKnown = gamesKnown
         self.alreadyDealing = alreadyDealing
 

@@ -30,72 +30,72 @@ def assignDealer(parTableList, parEmployeeList):
     dlrN = 0
 
     filledTable = []
-    for k in range(len(parTableList)):
-        parTableList[k].gameType()
-        for x in range(len(parEmployeeList)):
-            if parEmployeeList[x].alreadyDealing == True:
-                x += 1
-                pass
-            elif parTableList[k].isFull():
-
-                for dlrN in parTableList[k].dealerOut:
-                    if parEmployeeList[x].startTime in parTableList[k].dealerOut[v]:
-                        if parTableList[k].gameCode in parEmployeeList[x].gamesKnown:
-                            parTableList[dlrN].dealerName[v] = parEmployeeList[x].name
-                            parTableList[dlrN].dealerOut[v] = parEmployeeList[x].endTime
-                            x += 1
-                            dlrN += 1
-                            emps_Leaving.append(parTableList[dlrN].dealerName[v])
-                            print(emps_Leaving)
-                            # parTableList[k].dealerOut[v].pop()
-                            # parTableList[k].dealerName[v].pop()
-                            # parTableList[k].dealerOut[v].append(parEmployeeList[x].name)
-                            # parTableList[k].dealerOut[v].append(parEmployeeList[x].endTime)
-                        pass
-                    else:
-                        v = (v + 1)
-                        x += 1
-                        if v >= 3:
-                            v = 0
-                            pass
-                        if x >= 24:
-                            x = 0
-                            pass
-                        pass
-
-
-
-
-            elif parTableList[k].gameCode in parEmployeeList[x].gamesKnown:
-
-                # print(parTableList[k].gameCode, parEmployeeList[x].gamesKnown)
-                # print(d)
-                # print(parTableList[k].dealerName)
-                # print(parEmployeeList[x].name)
-                if parEmployeeList[x].name not in parTableList[k].currentDealer:
-                    d = parTableList[k].slotsUsed
-                    filledTable.append(str(parEmployeeList[x].name))
-                    d += 1
-                    # print(parTableList[k].dealerName)
-                    parTableList[k].slotsUsed = d
-                    parTableList[k].dealerOut.append(parEmployeeList[x].endTime)
-                    # print(d)
-                    parEmployeeList[x].alreadyDealing = True
-                if d >= int(parTableList[k].slotsNeeded):
-                    d = 0
-                    parTableList[k].dealerName = filledTable
-                    filledTable = []
-                    pass
-
-
-
-                else:
-                    pass
-            else:
-                pass
-        else:
-            k = 0
+    for k in parTableList:
+        k.gameType()
+        for x in parEmployeeList:
+            k.replaceDealer()
             pass
+        # if parEmployeeList[x].alreadyDealing == True:
+        #     x += 1
+        #     pass
+        # elif parTableList[k].isFull():
+        #
+        #     for dlrN in parTableList[k].dealerOut:
+        #         if parEmployeeList[x].startTime in parTableList[k].dealerOut[v]:
+        #             if parTableList[k].gameCode in parEmployeeList[x].gamesKnown:
+        #                 parTableList[dlrN].dealerName[v] = parEmployeeList[x].name
+        #                 parTableList[dlrN].dealerOut[v] = parEmployeeList[x].endTime
+        #                 x += 1
+        #                 dlrN += 1
+        #                 emps_Leaving.append(parTableList[dlrN].dealerName[v])
+        #                 print(emps_Leaving)
+        #                 # parTableList[k].dealerOut[v].pop()
+        #                 # parTableList[k].dealerName[v].pop()
+        #                 # parTableList[k].dealerOut[v].append(parEmployeeList[x].name)
+        #                 # parTableList[k].dealerOut[v].append(parEmployeeList[x].endTime)
+        #             pass
+        #         else:
+        #             v = (v + 1)
+        #             x += 1
+        #             if v >= 3:
+        #                 v = 0
+        #                 pass
+        #             if x >= 24:
+        #                 x = 0
+        #                 pass
+        #             pass
+
+        #
+        #     elif parTableList[k].gameCode in parEmployeeList[x].gamesKnown:
+        #
+        #         # print(parTableList[k].gameCode, parEmployeeList[x].gamesKnown)
+        #         # print(d)
+        #         # print(parTableList[k].dealerName)
+        #         # print(parEmployeeList[x].name)
+        #         if parEmployeeList[x].name not in parTableList[k].currentDealer:
+        #             d = parTableList[k].slotsUsed
+        #             filledTable.append(str(parEmployeeList[x].name))
+        #             d += 1
+        #             # print(parTableList[k].dealerName)
+        #             parTableList[k].slotsUsed = d
+        #             parTableList[k].dealerOut.append(parEmployeeList[x].endTime)
+        #             # print(d)
+        #             parEmployeeList[x].alreadyDealing = True
+        #         if d >= int(parTableList[k].slotsNeeded):
+        #             d = 0
+        #             parTableList[k].dealerName = filledTable
+        #             filledTable = []
+        #             pass
+        #
+        #
+        #
+        #         else:
+        #             pass
+        #     else:
+        #         pass
+        # else:
+        #     k = 0
+        #     pass
 
     return parTableList, parEmployeeList
 
