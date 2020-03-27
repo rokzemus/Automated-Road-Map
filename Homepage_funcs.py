@@ -3,7 +3,7 @@ import Main
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
 from PyQt5.uic import loadUi
-
+import Table
 
 
 
@@ -12,9 +12,8 @@ class HomePage(QMainWindow):
         super(HomePage, self).__init__()
         loadUi('untitled.ui', self)
         self.pushButton.clicked.connect(Main.updateTable)
-        tables_list = Main.table_List
-        for i in range(len(tables_list)):
-            self.listWidget_2.addItem(str(tables_list[i]))
+        for i in range(len(Main.table_List)):
+            self.listWidget_2.addItem(str(Main.table_List[i]))
         self.pushButton_2.clicked.connect(self.refreshEmp)
 
     def refreshEmp(self):

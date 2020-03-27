@@ -30,11 +30,12 @@ def assignDealer(parTableList, parEmployeeList):
     dlrN = 0
 
     filledTable = []
-    for k in parTableList:
-        k.gameType()
-        for x in parEmployeeList:
-            k.replaceDealer()
-            pass
+    for k in range(len(parTableList)):
+        parTableList[k].gameType()
+        parTableList[k].replaceDealer()
+
+        pass
+
         # if parEmployeeList[x].alreadyDealing == True:
         #     x += 1
         #     pass
@@ -151,10 +152,10 @@ def assignDealer(parTableList, parEmployeeList):
 
 
 def displayTable():
-    for i in range(len(table_List)):
-        print(table_List[i])
-    for i in range(len(table_List)):
-        print(table_List[i].slotsNeeded, table_List[i].slotsUsed)
+    # for i in range(len(table_List)):
+    #     print(table_List[i])
+    # for i in range(len(table_List)):
+    #     print(table_List[i].slotsNeeded, table_List[i].slotsUsed)
     print("")
     print("")
 
