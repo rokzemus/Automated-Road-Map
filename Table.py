@@ -1,4 +1,5 @@
 import Person
+import Main
 
 
 class Table():
@@ -16,10 +17,14 @@ class Table():
     def __str__(self):
         return f"{self.gameCode} {self.gameNum} {self.currentDealer}"
 
-    def displayDealers(self):
-        for i in range(len(self.currentDealer)):
-            print(self.gameCode, self.gameNum, self.currentDealer[i].name, self.currentDealer[i].endTime)
+    def __repr__(self):
+        pass
 
+    def displayDealers(self):
+        openTables = []
+        for i in range(len(self.currentDealer)):
+            openTables = self.gameCode, self.gameNum, self.currentDealer[i].name, self.currentDealer[i].endTime
+            print(openTables)
     def isFull(self):
         return self.slotsNeeded == self.slotsUsed
 
@@ -30,7 +35,6 @@ class Table():
             self.currentDealer = [Person.Person()] * self.slotsNeeded
 
     def replaceDealer(self):
-        import Main
         for x in range(len(self.currentDealer)):
             for i in range(len(Main.employee_List)):
                 if not Main.employee_List[i].alreadyDealing:
